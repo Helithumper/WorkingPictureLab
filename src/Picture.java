@@ -304,7 +304,7 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture amaze = new Picture("wow1.jpg");
+   /* Picture amaze = new Picture("wow1.jpg");
     Picture amaze2 = new Picture("wow1.jpg");
     Picture wowow = new Picture("doge-600.jpg");
     this.copy(amaze,0,0);
@@ -320,7 +320,31 @@ public class Picture extends SimplePicture
     this.copy(wowow,10,0);
     
     this.mirrorVertical();
-    this.write("collage.jpg");
+    this.write("collage.jpg");*/
+	  
+	  Picture cooper = new Picture("cooper.jpg");
+	  Picture trap = new Picture("its-a-trap.jpg");
+	  Picture glasses = new Picture("cooperGlasses.jpg");
+	  this.mirrorHorizontal();
+	  int count = 0;
+	  for(int i = 0; i < this.getHeight(); i+=374){
+		  for(int j = 640; j < this.getWidth();j+=288){
+			  this.copy(trap, i, j);
+			  if(count%2==1){
+				  trap.grayscale();
+			  }
+			  
+			  else{
+				  trap = new Picture("its-a-trap.jpg");
+			  }
+			  count++;
+		  }
+	  }
+	  this.mirrorVerticalRightToLeft();
+
+	  this.copy(glasses, 0, 0);
+	  this.mirrorHorizontal();
+	  this.write("collage.jpg");
   }
   
   

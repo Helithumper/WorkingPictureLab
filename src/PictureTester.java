@@ -88,7 +88,7 @@ public class PictureTester {
 
 	/** Method to test the collage method */
 	public static void testCollage() {
-		Picture canvas = new Picture("wow.jpg");
+		Picture canvas = new Picture("1920x1080.png");
 		canvas.createCollage();
 		canvas.explore();
 	}
